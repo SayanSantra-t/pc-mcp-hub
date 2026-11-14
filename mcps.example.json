@@ -1,0 +1,30 @@
+{
+  "worker_url": "https://YOUR-PC-MCP-WORKER.workers.dev",
+  "worker_secret": "CHANGE_ME_TO_A_RANDOM_SECRET",
+  "hub_port": 9500,
+  "service_name": "PC.MCP.Hub",
+  "cloudflared_path": "C:\\Program Files (x86)\\cloudflared\\cloudflared.exe",
+  "enable_builtin_pc_control": true,
+  "pc_control_prefix": "pc_",
+  "servers": {
+    "browseros": {
+      "enabled": true,
+      "type": "http",
+      "url": "http://127.0.0.1:9010/mcp",
+      "prefix": "",
+      "timeout": 30
+    },
+    "filesystem": {
+      "enabled": false,
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\path\\to\\your\\projects"
+      ],
+      "prefix": "fs_",
+      "timeout": 30
+    }
+  }
+}
